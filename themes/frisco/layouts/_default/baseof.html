@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        {{- block "title" . -}}
+        {{ .Site.Title }}
+        {{- end -}}
+    </title>
+    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="https://use.typekit.net/ptd4lpc.css">
+</head>
+<body>
+    <div class="container">
+        {{ partial "nav.html" . }}
+        {{ block "content" . }}{{ end }}
+        {{ partial "footer.html" . }}
+    </div>
+</body>
+</html>

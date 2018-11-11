@@ -1,0 +1,12 @@
+{{ define "content" }}
+<main>
+    <p>Welcome to <em>v0x.nl</em>, my home on the Internet.</p>
+    <p>&mdash; David Stotijn</p>
+    <h2>Latest articles</h2>
+    <ul class="recent-articles">
+        {{ range first 5 (where .Pages "Section" "articles").ByDate }}
+        {{ .Render "li" }}
+        {{ end }}
+    </ul>
+</main>
+{{ end }}

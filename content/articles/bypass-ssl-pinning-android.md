@@ -40,7 +40,7 @@ used in this guide should apply to most apps, but your mileage may vary.
 ## Requirements
 
 * [VirtualBox](https://www.virtualbox.org/)
-* [Android-x86 ISO image](http://www.android-x86.org/documents/virtualboxhowto)
+* [Android-x86 ISO image](https://www.android-x86.org/documentation/virtualbox.html)
 * [Android SDK Platform
   Tools](https://developer.android.com/studio/command-line/)
 * [mitmproxy](https://mitmproxy.org/)
@@ -146,7 +146,7 @@ root privileges:
 adb root
 adb push frida-server-12.2.16-android-x86_64 /data/local/tmp/frida-server
 adb shell "chmod 755 /data/local/tmp/frida-server"
-adh shell "/data/local/tmp/frida-server --listen 0.0.0.0 &
+adb shell "/data/local/tmp/frida-server --listen 0.0.0.0 &"
 ```
 
 ## The "repinning" script
@@ -156,6 +156,18 @@ Download the "repinning" Frida script written by Piergiovanni Cipolloni:
 ```sh
 wget https://techblog.mediaservice.net/wp-content/uploads/2017/07/frida-android-repinning_sa-1.js
 ```
+
+**NOTE:** On line 25 of the script, add `var` before `cf` such that the line goes from:
+
+`cf = CertificateFactory.getInstance("X.509");`
+
+to
+
+`var cf = CertificateFactory.getInstance("X.509");`
+
+The reason for doing this is that older versions of frida allowed using variables without declaring them first, which has been changed in newer versions as they use strict mode.
+
+[Source](https://github.com/frida/frida/issues/880)
 
 This script will effectively hijack the initialisation of the
 [SSLContext](https://developer.android.com/reference/javax/net/ssl/SSLContext)
@@ -168,6 +180,10 @@ Find out the name of the package to run, from the host machine:
 ```sh
 adb shell 'pm list packages -f' | grep funda
 ```
+
+**NOTE:** You need python 3.7 or above for this. With python3.7 installed, run:
+
+`pip install frida frida-tools`
 
 Run the program:
 

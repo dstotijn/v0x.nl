@@ -1,5 +1,6 @@
 ---
 title: "Bypassing SSL certificate pinning on Android for MITM attacks"
+description: "Step-by-step guide for bypassing SSL certificate pinning on Android for MITM attacks."
 date: 2018-11-11T17:54:03+01:00
 ---
 
@@ -39,12 +40,12 @@ used in this guide should apply to most apps, but your mileage may vary.
 
 ## Requirements
 
-* [VirtualBox](https://www.virtualbox.org/)
-* [Android-x86 ISO image](http://www.android-x86.org/documents/virtualboxhowto)
-* [Android SDK Platform
+- [VirtualBox](https://www.virtualbox.org/)
+- [Android-x86 ISO image](http://www.android-x86.org/documents/virtualboxhowto)
+- [Android SDK Platform
   Tools](https://developer.android.com/studio/command-line/)
-* [mitmproxy](https://mitmproxy.org/)
-* [Frida](https://www.frida.re/)
+- [mitmproxy](https://mitmproxy.org/)
+- [Frida](https://www.frida.re/)
 
 ## Installing and running Android-x86
 
@@ -81,9 +82,10 @@ address with the one acquired in the previous step:
 adb connect 192.168.178.179
 ```
 
-## Running `mitmproxy` on  the host
+## Running `mitmproxy` on the host
 
 Install `mitmproxy` on your host machine, e.g. on macOS:
+
 ```sh
 brew install mitmproxy
 ```
@@ -94,7 +96,7 @@ Then run it:
 mitmproxy
 ```
 
-By default, `mitmproxy` binds on all network interfaces, on port `8080`. 
+By default, `mitmproxy` binds on all network interfaces, on port `8080`.
 
 Copy the rogue CA certificate that mitmproxy generated to the Android box:
 
@@ -118,9 +120,9 @@ Install the CA certificate from mitmproxy by visiting http://mitm.it in Chrome
 on the Android box. Choose "Android" and install the certificate. You'll likely
 be prompted to set a pincode for the OS. Afterwards, you can test if the CA is
 successfully installed by browsing to https://example.com. The intercepted
-traffic should be visible in  `mitmproxy` running on the host machine. 
+traffic should be visible in `mitmproxy` running on the host machine.
 
-## Installing an app 
+## Installing an app
 
 You can either download and install an app from the "Play Store" on the Android
 box, or by installing an `.apk` file (e.g. obtained at
@@ -131,6 +133,7 @@ adb install funda_v2.29.1_apkpure.com.apk
 ```
 
 ## Installing Frida
+
 Run from the host machine:
 
 ```sh
@@ -139,6 +142,7 @@ xz -d frida-server-12.2.16-android-x86_64.xz
 ```
 
 ## Running Frida
+
 Run the following commands from the host machine to install and run Frida with
 root privileges:
 
@@ -163,6 +167,7 @@ when our app starts, ensuring that the rogue CA certificate from mitmproxy we
 pushed earlier is used instead of the one that comes bundled with the app.
 
 ## Starting the app
+
 Find out the name of the package to run, from the host machine:
 
 ```sh
@@ -178,11 +183,11 @@ frida -U -f com.funda.two -l frida-android-repinning_sa-1.js --no-pause
 If all goes well, the script will do its job and overload the init process of
 the SSLContext:
 
-![Repinning with Frida](/images/repinning.png)
+![Repinning with Frida](/assets/articles/repinning.png)
 
 As we interact with the app (e.g. open a house listing) we can see the HTTP
 requests being intercepted and logged in `mitmproxy`:
 
-![mitmproy list](/images/mitm-list.png)
+![mitmproy list](/assets/articles/mitm-list.png)
 
-![mitmproy request](/images/mitm-req.png)
+![mitmproy request](/assets/articles/mitm-req.png)

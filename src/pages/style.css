@@ -1,0 +1,66 @@
+body {
+  margin: 2em 1em;
+  font-family: "Noto Serif", serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #000;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h1:after {
+  content: "";
+  display: block;
+  width: 33%;
+  margin-top: 0.5em;
+  border-bottom: 0.5rem solid turquoise;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+p {
+  margin: 1.5em 0;
+}
+
+a {
+  color: slateblue;
+}
+
+img {
+  max-width: 100%;
+}
+
+time,
+footer {
+  font-family: "Fira Mono", monospace;
+}
+
+pre {
+  background-color: #eee;
+  overflow: scroll;
+}
+
+pre code {
+  margin: 1em;
+  display: inline-block;
+  font-size: 0.9em;
+}
+
+code {
+  font-family: "Fira Mono", monospace;
+}

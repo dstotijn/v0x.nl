@@ -14,7 +14,15 @@ export default function Article({ article }: { article: SerializedArticle }) {
     <Layout>
       <Head>
         <title>v0x.nl - {article.title}</title>
-        <meta name="description" content={article.description} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="og:title" content={article.title} />
+        <meta name="og:description" content={article.description} />
+        {article.ogImage && (
+          <meta
+            name="og:image"
+            content={"https://73a36f3fcf1f.ngrok.io" + article.ogImage}
+          />
+        )}
       </Head>
       <h1>{article.title}</h1>
       <time dateTime={article.date}>
@@ -43,6 +51,7 @@ export async function getStaticProps({ params }) {
     "date",
     "content",
     "path",
+    "ogImage",
   ]);
   const content = await markdownToHtml(article.content);
 

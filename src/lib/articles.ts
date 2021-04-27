@@ -9,6 +9,7 @@ export interface Article {
   date: Date;
   content: string;
   path: string;
+  ogImage: string;
 }
 
 export interface SerializedArticle {
@@ -18,6 +19,7 @@ export interface SerializedArticle {
   date: string;
   content: string;
   path: string;
+  ogImage: string;
 }
 
 export const articlesPath = "content/articles";

@@ -18,7 +18,12 @@ export default function Layout({ children }) {
         </Link>
       </header>
       {children}
-      <footer>© {year} David Stotijn</footer>
+      <footer>
+        © {year} David Stotijn{" • "}
+        <Link href="/">
+          <a>v0x.nl</a>
+        </Link>
+      </footer>
     </div>
   );
 }

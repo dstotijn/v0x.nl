@@ -8,6 +8,7 @@ import {
 import markdownToHtml from "../../lib/markdownToHtml";
 import getFormattedDateTime from "../../lib/date";
 import Layout from "../../components/layout";
+import styles from "./Article.module.css";
 
 export default function Article({ article }: { article: SerializedArticle }) {
   return (
@@ -15,22 +16,32 @@ export default function Article({ article }: { article: SerializedArticle }) {
       <Head>
         <title>v0x.nl - {article.title}</title>
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="title" content={article.title} />
         <meta name="og:title" content={article.title} />
+        <meta name="description" content={article.description} />
         <meta name="og:description" content={article.description} />
+        <meta name="description" content={article.description} />
         {article.ogImage && (
-          <meta
-            name="og:image"
-            content={"https://73a36f3fcf1f.ngrok.io" + article.ogImage}
-          />
+          <meta name="og:image" content={"https://v0x.nl" + article.ogImage} />
         )}
       </Head>
       <h1>{article.title}</h1>
-      <time dateTime={article.date}>
-        {getFormattedDateTime(article.date as string)}
-      </time>
+      <header>
+        <img
+          className={styles.avatar}
+          src="/assets/avatar.jpg"
+          alt="Profile picture of David Stotijn"
+        />
+        <a href="https://twitter.com/dstotijn">David Stotijn</a>
+        {" • "}
+        <time dateTime={article.date}>
+          {getFormattedDateTime(article.date as string)}
+        </time>
+      </header>
       <div dangerouslySetInnerHTML={{ __html: article.content }} />
+      <hr />
       <p>
-        View source:{" "}
+        ⚙️ View article source:{" "}
         <code>
           <a
             href={`https://github.com/dstotijn/v0x/blob/master/${article.path}`}

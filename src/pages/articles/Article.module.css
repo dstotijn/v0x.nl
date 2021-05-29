@@ -1,6 +1,10 @@
+.articleMetadata {
+  margin-bottom: 2em;
+}
+
 .avatar {
-  width: 2.5rem;
+  width: 3em;
   vertical-align: middle;
-  margin-right: 1rem;
+  margin-right: 1em;
   border-radius: 50%;
 }

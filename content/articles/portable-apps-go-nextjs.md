@@ -5,7 +5,7 @@ ogImage: "/assets/articles/golang-nextjs-portable-og.png"
 date: 2021-04-27T14:13:13+02:00
 ---
 
-![Go + Next.js = Portable Magic](/assets/articles/golang-nextjs-portable-og.png)
+<img src="/assets/articles/golang-nextjs-portable-og.png" alt="Go + Next.js = Portable Magic" style="border:1px solid #ddd;">
 
 The release of [Go 1.16](https://golang.org/doc/go1.16) introduced a new
 [`embed`](https://golang.org/pkg/embed/) package in the Go standard library. It

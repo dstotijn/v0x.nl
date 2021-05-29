@@ -26,22 +26,21 @@ export default function Article({ article }: { article: SerializedArticle }) {
         )}
       </Head>
       <h1>{article.title}</h1>
-      <header>
+      <header className={styles.articleMetadata}>
         <img
           className={styles.avatar}
           src="/assets/avatar.jpg"
           alt="Profile picture of David Stotijn"
         />
-        <a href="https://twitter.com/dstotijn">David Stotijn</a>
+        David Stotijn
         {" • "}
         <time dateTime={article.date}>
           {getFormattedDateTime(article.date as string)}
         </time>
       </header>
       <div dangerouslySetInnerHTML={{ __html: article.content }} />
-      <hr />
       <p>
-        ⚙️ View article source:{" "}
+        ⚙️ <i>Article source:</i>{" "}
         <code>
           <a
             href={`https://github.com/dstotijn/v0x/blob/master/${article.path}`}

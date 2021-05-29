@@ -1,24 +1,35 @@
 body {
-  margin: 2em 1em;
-  font-family: "Noto Serif", serif;
-  font-size: 16px;
-  line-height: 1.8;
-  color: #444;
+  margin: 2em 1.2em;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: #111;
+  background-color: #fff8ef;
 }
 
-h1,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.5;
+}
+
+body,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "IBM Plex Sans", sans-serif;
-  color: #000;
-  line-height: 1.5;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Inter", sans-serif;
 }
 
 h1 {
-  font-size: 3em;
+  font-family: "EB Garamond", serif;
+  font-size: 4em;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
 }
 
 h1:after {
@@ -31,9 +42,12 @@ h1:after {
 
 h2 {
   font-size: 1.8em;
+  font-weight: 600;
+  line-height: 1;
 }
 
-p {
+p,
+pre {
   margin: 1.5em 0;
 }
 
@@ -45,20 +59,16 @@ img {
   max-width: 100%;
 }
 
-header,
-footer {
-  font-family: "Fira Mono", monospace;
-}
-
 pre {
-  background-color: #eee;
+  background-color: #f6efe5;
+  border-radius: 0.5em;
   overflow: scroll;
 }
 
 pre code {
-  margin: 1em;
+  margin: 1.5em;
   display: inline-block;
-  font-size: 0.9em;
+  font-size: 0.875rem;
 }
 
 code {
@@ -66,8 +76,19 @@ code {
 }
 
 blockquote {
-  border-left: 0.5rem solid #eee;
+  border-left: 0.5em solid #f6efe5;
   margin-left: 0;
-  padding-left: 1rem;
+  padding-left: 1em;
+  font-family: "EB Garamond", serif;
+  font-size: 1.5em;
   font-style: italic;
+}
+
+footer {
+  margin-top: 2em;
+}
+
+footer,
+footer a {
+  color: #aaa;
 }

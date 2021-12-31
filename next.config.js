@@ -8,5 +8,5 @@ const nextConfig = {
 }
 
 module.exports = withPlausibleProxy({
-    scriptName: "plausible",
+    subdirectory: "plausible",
 })(nextConfig)

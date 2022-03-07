@@ -11,6 +11,7 @@ export default function Layout({ children }) {
         <title>
           v0x.nl - David Stotijn, a software engineer from Amsterdam
         </title>
+        <script async defer src="https://nullitics.com/script.js"></script>
       </Head>
       <header>
         <Link href="/">
@@ -18,12 +19,7 @@ export default function Layout({ children }) {
         </Link>
       </header>
       {children}
-      <footer>
-        © {year} David Stotijn{" • "}
-        <Link href="/">
-          <a>v0x.nl</a>
-        </Link>
-      </footer>
+      <footer>© {year} David Stotijn</footer>
     </div>
   );
 }

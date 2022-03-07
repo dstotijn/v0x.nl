@@ -28,7 +28,7 @@ export default function Index({ articles }: { articles: SerializedArticle[] }) {
       <Head>
         <meta
           name="description"
-          content="David Stotijn‘s homepage, with bio, articles on web development and contact information."
+          content="David Stotijn’s homepage, with bio, articles on web development and contact information."
         />
       </Head>
       <header>
@@ -56,11 +56,11 @@ export default function Index({ articles }: { articles: SerializedArticle[] }) {
           playing piano and guitar. I live in Amsterdam, where I was also born.
         </p>
         <p>
-          This website is just a small home on the web to put assorted stuff
-          I’ve created over the years. The source code is on{" "}
+          This website is a small home on the web to put assorted stuff I’ve
+          created over the years. The source code is on{" "}
           <a href="https://github.com/dstotijn/v0x">GitHub</a>. I registered the
           domain <code>v0x.nl</code> a few years ago as a quick-to-type hostname
-          for hosting side projects.
+          for side projects.
         </p>
         <h2>Work</h2>
         <p>
@@ -68,13 +68,19 @@ export default function Index({ articles }: { articles: SerializedArticle[] }) {
           with APIs and web services in 2015 when I joined MessageBird, an
           Amsterdam based telecom startup. There I helped develop{" "}
           <a href="https://www.messagebird.com/flow-builder/">Flow Builder</a>,
-          a no-code platform for creating automated SMS, voice and chat
-          workflows.
+          a no-code platform for automated SMS, voice and chat workflows.
         </p>
         <p>
-          I’m currently at Framer, helping build and maintain the backend for
-          its cloud based prototyping tool:{" "}
-          <a href="http://framer.com/web">Framer Web</a>.
+          While at <a href="https://www.framer.com">Framer</a>, an interactive
+          design tool, I’ve built and maintained features that support design
+          teams to collaborate and easily publish work on the web.
+        </p>
+        <p>
+          Currently I’m working on{" "}
+          <a href="https://hetty.xyz/?utm_source=v0x_nl">Hetty</a>, an open
+          source HTTP toolkit for security research. Aside from the OSS project,
+          I’m building a commercial service around it to help infosec
+          professionals collaborate on pen testing.
         </p>
 
         <h2>Articles</h2>
@@ -83,7 +89,6 @@ export default function Index({ articles }: { articles: SerializedArticle[] }) {
         <h2>Get in touch</h2>
         <p>
           You can find me on <a href="https://twitter.com/dstotijn">Twitter</a>,{" "}
-          <a href="https://www.instagram.com/dstotijn/">Instagram</a>,{" "}
           <a href="https://github.com/dstotijn">GitHub</a>,{" "}
           <a href="https://www.linkedin.com/in/dstotijn/">LinkedIn</a> or{" "}
           <a href="mailto:dstotijn@gmail.com">send me an e-mail</a>.

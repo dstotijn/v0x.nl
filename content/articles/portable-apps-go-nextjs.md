@@ -49,10 +49,7 @@ import (
 	"runtime/pprof"
 )
 
-//go:embed nextjs/dist
-//go:embed nextjs/dist/_next/static
-//go:embed nextjs/dist/_next/static/chunks/pages/*.js
-//go:embed nextjs/dist/_next/static/*/*.js
+//go:embed all:nextjs/dist
 var nextFS embed.FS
 
 func main() {
@@ -97,27 +94,24 @@ package, introduced in Go 1.16. See the
 We'll use the `//go:embed` directive like so:
 
 ```go
-//go:embed nextjs/dist
-//go:embed nextjs/dist/_next
-//go:embed nextjs/dist/_next/static/chunks/pages/*.js
-//go:embed nextjs/dist/_next/static/*/*.js
+//go:embed all:nextjs/dist
 var nextFS embed.FS
 ```
 
 The directory `nextjs/dist` will contain the static HTML export of the Next.js
-app (see "The export script" in the next section). You might wonder why we need
-more than one directive. This is done because of the file matching behaviour of
-the `embed` package:
+app (see "The export script" in the next section).
 
-> "If a pattern names a directory, all files in the subtree rooted at that
-> directory are embedded (recursively), except that files with names beginning
-> with ‘.’ or ‘\_’ are excluded."
+The `all:` prefix (added in Go 1.18) ensures that any files or directories
+prefixed with `.` or `_` are included:
+
+> "If a pattern begins with the prefix ‘all:’, then the rule for walking
+> directories is changed to include those files beginning with ‘.’ or ‘\_’. For
+> example, ‘all:image’ embeds both ‘image/.tempfile’ and ‘image/dir/.tempfile’."
 
 _(Source: [`embed` package docs](https://golang.org/pkg/embed/#hdr-Directives))_
 
 Because a static HTML export of a Next.js app contains various directories and
-files prefixed with `_`, we need to explicitly add directives for all these
-patterns.
+files prefixed with `_`, we need this rule behavior.
 
 At compile time, the matched files are embedded in the binary. The
 [`embed.FS`](https://golang.org/pkg/embed/#FS) type implements

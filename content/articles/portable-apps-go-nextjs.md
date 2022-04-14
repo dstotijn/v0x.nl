@@ -307,7 +307,7 @@ To create a streamlined Docker image for our portable app, we create a
 `Dockerfile`:
 
 ```docker
-ARG GO_VERSION=1.16
+ARG GO_VERSION=1.18
 ARG NODE_VERSION=14.16.1
 ARG ALPINE_VERSION=3.13.5
 

@@ -50,10 +50,11 @@ export default function Index({ articles }: { articles: SerializedArticle[] }) {
             src="/assets/avatar.jpg"
             alt="Profile picture of David Stotijn"
           />
-          For as long as I can remember I enjoy tinkering with computers and
-          building things. I’m very grateful to do this for a living, over 10
-          years already now. Aside from tech I really enjoy music; mostly
-          playing piano and guitar. I live in Amsterdam, where I was also born.
+          For as long as I can remember I’ve enjoyed tinkering with computers
+          and building things. I’m very grateful to do this for a living for
+          over 10 years already. Aside from tech I really enjoy music; mostly
+          playing piano and guitar. I live in Amsterdam with my girlfriend and
+          son.
         </p>
         <p>
           This website is a small home on the web to put assorted stuff I’ve
@@ -73,14 +74,17 @@ export default function Index({ articles }: { articles: SerializedArticle[] }) {
         <p>
           While at <a href="https://www.framer.com">Framer</a>, an interactive
           design tool, I’ve built and maintained features that support design
-          teams to collaborate and easily publish work on the web.
+          teams to collaborate and easily publish sites.
         </p>
+        <p>
+          <strong>🤙 I’m available for freelance work!</strong>{" "}
+          <a href="/cv_david_stotijn.pdf">Check out my CV.</a>
+        </p>
+        <h2>Side projects</h2>
         <p>
           Currently I’m working on{" "}
           <a href="https://hetty.xyz/?utm_source=v0x_nl">Hetty</a>, an open
-          source HTTP toolkit for security research. Aside from the OSS project,
-          I’m building a commercial service around it to help infosec
-          professionals collaborate on pen testing.
+          source HTTP toolkit for security research.
         </p>
 
         <h2>Articles</h2>

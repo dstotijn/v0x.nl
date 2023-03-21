@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import WorkExperience from "./WorkExperience.astro";
+
+const workExperiences = (await getCollection("work-experiences")).sort((a, b) => a.data.order - b.data.order);
+---
+
+<ul class="m-0 -mb-4 list-none pl-0">
+  {
+    workExperiences.map(async (workExperience, index) => {
+      const { Content } = await workExperience.render();
+      return (
+        <li class="m-0 pl-0">
+          <WorkExperience {...workExperience.data} last={workExperiences.length === index + 1}>
+            <Content />
+          </WorkExperience>
+        </li>
+      );
+    })
+  }
+</ul>

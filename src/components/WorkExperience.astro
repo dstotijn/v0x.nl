@@ -1,0 +1,43 @@
+---
+interface ImageMetadata {
+  src: string;
+  width: number;
+  height: number;
+  format: string;
+}
+
+export interface Props {
+  title: string;
+  from: Date;
+  to?: Date;
+  logo: ImageMetadata;
+  last: boolean;
+}
+
+const { title, from, to, logo, last = false } = Astro.props;
+---
+
+<div class="relative">
+  {!last && <span class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true" />}
+  <div class="relative flex gap-4">
+    <img
+      {...logo}
+      alt={`Organisation logo of ${title}`}
+      class="not-prose my-0 h-10 w-10 rounded-full ring-8 ring-white"
+    />
+    <div class="min-w-0 flex-1">
+      <div class="not-prose">
+        <h3 class="font-semibold text-black">{title}</h3>
+        <div class="flex text-gray-300">
+          <time datetime={from.toISOString()}>{from.getFullYear()}</time>
+          <span>—</span>
+          {to ? <time datetime={to.toISOString()}>{to.getFullYear()}</time> : <span>present</span>}
+        </div>
+      </div>
+
+      <div class="mt-2 prose-p:mt-0">
+        <slot />
+      </div>
+    </div>
+  </div>
+</div>

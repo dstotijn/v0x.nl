@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  a {
+    @apply underline;
+  }
+}
+
+@layer components {
+  .gutter {
+    @apply px-4;
+  }
+
+  .prose-custom {
+    @apply prose 
+    text-gray-500
+    prose-headings:font-serif
+    prose-headings:font-normal
+    prose-headings:!leading-tight
+    prose-headings:text-black
+    prose-h1:mb-4
+    prose-h2:mt-8
+    prose-h2:mb-4
+    prose-a:text-indigo-500
+    prose-a:underline-offset-2
+    prose-pre:p-6
+    sm:prose-h1:text-6xl
+    sm:prose-h2:text-3xl
+    sm:prose-h3:text-2xl;
+  }
+}
+
+@font-face {
+  font-family: "Editorial New";
+  src: url("/fonts/PPEditorialNew-Regular.woff2") format("woff2"),
+    url("/fonts/PPEditorialNew-Regular.woff") format("woff");
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+}

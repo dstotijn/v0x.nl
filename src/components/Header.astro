@@ -1,0 +1,43 @@
+---
+import { SITE_TITLE } from "../consts";
+
+const menuItems = [
+  {
+    title: SITE_TITLE,
+    href: "/",
+  },
+  {
+    title: "Articles",
+    href: "/articles",
+  },
+  {
+    title: "CV",
+    href: "/cv_david_stotijn.pdf",
+  },
+  {
+    title: "Contact",
+    href: "/contact",
+  },
+];
+---
+
+<header class="gutter mx-auto mt-8 mb-10 max-w-prose lowercase">
+  <ul class="flex gap-6">
+    {
+      menuItems.map(({ title, href }, index) => (
+        <li>
+          <a
+            href={href}
+            class:list={[
+              "font-mono underline-offset-8 hover:text-indigo-500 hover:decoration-indigo-500",
+              { ["text-gray-400 decoration-gray-200 "]: index !== 0 },
+              { ["text-black mr-4"]: index === 0 },
+            ]}
+          >
+            {title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</header>

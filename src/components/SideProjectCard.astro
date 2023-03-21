@@ -1,0 +1,39 @@
+---
+import { Icon } from "astro-icon";
+import StargazersCount from "./StargazersCount.astro";
+
+interface ImageMetadata {
+  src: string;
+  width: number;
+  height: number;
+  format: string;
+}
+
+export interface Props {
+  title: string;
+  logo: ImageMetadata;
+  url: string;
+}
+
+const { title, logo, url, github } = Astro.props;
+---
+
+<div class="flex gap-4 rounded-lg border p-6 shadow-sm">
+  <div class="min-w-0 flex-1">
+    <div class="not-prose">
+      <h3 class="font-semibold text-black"><a href={url}>{title}</a></h3>
+    </div>
+    <div class="mt-2 prose-p:mt-0">
+      <slot />
+    </div>
+    <div class="flex items-center gap-2">
+      <Icon name="mdi:github" class="h-5 w-5" />
+      <a href={`https://github.com/${github}`} class="text-inherit no-underline">{github}</a>
+      <Icon name="mdi:star" class="h-5 w-5 text-yellow-400" />
+      <a href={`https://github.com/${github}/stargazers`} class="text-inherit no-underline">
+        <StargazersCount repo={github} /> stars
+      </a>
+    </div>
+  </div>
+  <img src={logo.src} alt={`${title} (logo)`} class="m-0 mb-4 h-10 w-10 rounded-full" />
+</div>

@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import FormattedDate from "./FormattedDate.astro";
+
+const articles = (await getCollection("articles")).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+---
+
+<ul class="p-0">
+  {
+    articles.map((article) => (
+      <li class="my-4 flex gap-8 px-0">
+        <span class="font-mono">
+          <FormattedDate date={article.data.pubDate} />
+        </span>
+        <div class="min-w-0 flex-1">
+          <a href={`/articles/${article.slug}/`}>{article.data.title}</a>
+          <div>{article.data.description}</div>
+        </div>
+      </li>
+    ))
+  }
+</ul>

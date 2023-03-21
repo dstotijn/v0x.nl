@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import SideProjectCard from "./SideProjectCard.astro";
+
+const sideProjects = (await getCollection("side-projects")).sort((a, b) => a.data.order - b.data.order);
+---
+
+<ul class="m-0 list-none pl-0">
+  {
+    sideProjects.map(async (sideProject) => {
+      const { Content } = await sideProject.render();
+      return (
+        <li class="m-0 mb-4 pl-0">
+          <SideProjectCard {...sideProject.data}>
+            <Content />
+          </SideProjectCard>
+        </li>
+      );
+    })
+  }
+</ul>

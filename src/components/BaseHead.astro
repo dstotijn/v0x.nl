@@ -1,0 +1,59 @@
+---
+import "@fontsource/jetbrains-mono/variable.css";
+import { getImage } from "astro:assets";
+
+import { SITE_TITLE } from "../consts";
+import "../styles/global.css";
+import og from "../assets/images/og.jpg";
+import avatar from "../assets/images/avatar.jpg";
+
+export interface Props {
+  title?: string;
+  description: string;
+  image?: string;
+  type?: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const { title = SITE_TITLE, description, image, type = "website" } = Astro.props;
+const defaultImage = await getImage({ src: og, format: "jpg", quality: 100 });
+const ogUrl = new URL(image || defaultImage.src, Astro.url);
+---
+
+<title>{title}</title>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+
+<link rel="canonical" href={canonicalURL} />
+<link rel="icon" sizes="32x32" type="image/png" href={(await getImage({ src: avatar, width: 32 })).src} />
+<link rel="icon" sizes="16x16" type="image/png" href={(await getImage({ src: avatar, width: 16 })).src} />
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  type="image/png"
+  href={(await getImage({ src: avatar, width: 180 })).src}
+/>
+
+<link rel="preconnect" href="https://rsms.me/" />
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="author" content="David Stotijn" />
+
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={SITE_TITLE} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogUrl} />
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={ogUrl} />
+
+<slot />

@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import FormattedDate from "./FormattedDate.astro";
 
-const articles = (await getCollection("articles")).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+const articles = (await getCollection("articles")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <ul class="p-0">

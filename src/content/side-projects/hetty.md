@@ -1,6 +1,6 @@
 ---
 title: Hetty
-logo: images/side-projects/hetty.svg
+logo: ~/assets/images/side-projects/hetty.svg
 url: https://hetty.xyz/docs/?utm_source=v0x_nl
 github: dstotijn/hetty
 order: 1

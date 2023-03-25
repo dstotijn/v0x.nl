@@ -2,7 +2,7 @@
 title: MessageBird
 from: 2015-01-01
 to: 2019-01-01
-logo: images/work-experiences/messagebird.svg
+logo: ~/assets/images/work-experiences/messagebird.svg
 order: 3
 ---
 

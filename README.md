@@ -5,19 +5,19 @@ Source code for https://v0x.nl, built using [Astro](https://astro.build/).
 ## Installation
 
 ```sh
-pnpm install
+npm install
 ```
 
 ## Development
 
 ```sh
-pnpm dev
+npm run dev
 ```
 
 ## Build
 
 ```sh
-pnpm build
+npm run build
 ```
 
 ## License

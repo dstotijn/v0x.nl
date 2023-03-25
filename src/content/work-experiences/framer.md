@@ -2,7 +2,7 @@
 title: Framer
 from: 2019-01-01
 to: 2021-01-01
-logo: images/work-experiences/framer.svg
+logo: ~/assets/images/work-experiences/framer.svg
 order: 2
 ---
 

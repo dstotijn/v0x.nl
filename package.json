@@ -6,6 +6,9 @@
   "author": "David Stotijn <dstotijn@gmail.com>",
   "license": "MIT",
   "private": true,
+  "engines": {
+    "node": ">= 18.7.1"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

@@ -28,7 +28,7 @@ const { title, from, to, logo, last = false } = Astro.props;
     <div class="min-w-0 flex-1">
       <div class="not-prose">
         <h3 class="font-semibold text-black">{title}</h3>
-        <div class="flex text-gray-300">
+        <div class="flex text-gray-400">
           <time datetime={from.toISOString()}>{from.getFullYear()}</time>
           <span>—</span>
           {to ? <time datetime={to.toISOString()}>{to.getFullYear()}</time> : <span>present</span>}

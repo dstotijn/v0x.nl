@@ -1,7 +1,7 @@
 ---
 title: Hetty Software (Self-employed)
 from: 2022-01-01
-logo: ~/assets/images/work-experiences/hetty.svg
+logo: ../../assets/images/work-experiences/hetty.svg
 order: 1
 ---
 

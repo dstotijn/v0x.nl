@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, sharpImageService } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
@@ -20,10 +20,7 @@ export default defineConfig({
       theme: "github-dark",
     },
   },
-  experimental: {
-    assets: true,
-  },
   image: {
-    service: "astro/assets/services/sharp",
+    service: sharpImageService(),
   },
 });

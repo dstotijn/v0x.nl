@@ -8,7 +8,7 @@ module.exports = {
       fontFamily: {
         sans: ['"Inter var"', ...defaultTheme.fontFamily.sans],
         serif: ['"Editorial New"', ...defaultTheme.fontFamily.serif],
-        mono: ['"JetBrains MonoVariable"', ...defaultTheme.fontFamily.mono],
+        mono: ['"JetBrains Mono"', ...defaultTheme.fontFamily.mono],
       },
     },
   },

@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/Layout.astro
-title: David Stotijn, a software engineer from Amsterdam
+title: David Stotijn, an Amsterdam-based software engineer
 description: I'm a Freelance Software Engineer with 10+ years' experience building and maintaining web applications and services on cloud infrastructure.
 ---
 
@@ -9,7 +9,7 @@ import { Image } from "astro:assets";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import avatar from "../assets/images/avatar.jpg";
+import avatar from "../assets/images/avatar.png";
 import WorkExperiences from "../components/WorkExperiences.astro";
 import ArticlesList from "../components/ArticlesList.astro";
 import SideProjectsCards from "../components/SideProjectsCards.astro";
@@ -18,17 +18,16 @@ import SideProjectsCards from "../components/SideProjectsCards.astro";
   src={avatar}
   format="webp"
   quality={100}
-  class="w-24 rounded-full sm:w-36"
+  class="w-24 rounded-full bg-blue-100 sm:w-36"
   alt="Profile picture of David Stotijn"
 />
 
-# I'm <span class="text-blue-500">David Stotijn</span>, a software engineer from Amsterdam.
+# I'm <span class="text-blue-500">David Stotijn</span>,<br/>an Amsterdam-based software engineer.
 
 <>
   {
     <p class="relative text-xl font-medium !leading-normal text-gray-500 sm:text-2xl">
-      Hello, and welcome! This is my little home on the web where I talk about work and write bits and bobs on software
-      development.
+      This is my little home on the web where I talk about work and write bits and bobs on software development.
     </p>
   }
 </>

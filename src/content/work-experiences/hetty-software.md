@@ -7,7 +7,7 @@ order: 1
 
 For [GitBook](https://www.gitbook.com/), I helped integrate error tracking and
 logging for Cloudflare Workers with the existing observability stack. I also
-extended the customer facing REST API (TypeScript, Firebase) with new
+extended the customer-facing REST API (TypeScript, Firebase) with new
 endpoints for user management, improved single sign-on features, and built a
 proof of concept for a Terraform provider plugin (Go).
 

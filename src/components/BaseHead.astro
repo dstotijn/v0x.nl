@@ -5,7 +5,6 @@ import { getImage } from "astro:assets";
 import { SITE_TITLE } from "../consts";
 import "../styles/global.css";
 import og from "../assets/images/og.jpg";
-import avatar from "../assets/images/avatar.png";
 
 export interface Props {
   title?: string;
@@ -27,15 +26,6 @@ const ogUrl = new URL(image || defaultImage.src, Astro.url);
 <meta name="generator" content={Astro.generator} />
 
 <link rel="canonical" href={canonicalURL} />
-<link rel="icon" sizes="32x32" type="image/png" href={(await getImage({ src: avatar, width: 32 })).src} />
-<link rel="icon" sizes="16x16" type="image/png" href={(await getImage({ src: avatar, width: 16 })).src} />
-<link
-  rel="apple-touch-icon"
-  sizes="180x180"
-  type="image/png"
-  href={(await getImage({ src: avatar, width: 180 })).src}
-/>
-
 <link rel="preconnect" href="https://rsms.me/" />
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 

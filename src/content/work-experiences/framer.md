@@ -6,9 +6,10 @@ logo: ../../assets/images/work-experiences/framer.svg
 order: 2
 ---
 
-I developed web services (Go, Node.js, TypeScript) and infra on AWS for
-automated certificate management (using Let’s Encrypt) and site hosting (EC2,
-DynamoDB, S3, CloudFront).
+Developed web services **(Go, Node.js, TypeScript)**, CI/CD pipelines and infra
+on AWS for automated certificate management (using Let’s Encrypt) and site
+hosting **(EC2, Lambda, DynamoDB, S3, CloudFront)**.
 
-I built a pipeline for automated screenshotting of Framer project canvases for Dashboard and Open Graph.
-Queue workers, browser automation, image processing, storage (SQS, Playwright, Sharp, S3).
+I built a pipeline on AWS for automated screenshotting of Framer project
+canvases. Queue workers **(SQS)**, browser automation **(Playwright)**, image
+processing **(Sharp)**, file storage **(S3)**.

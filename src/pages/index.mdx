@@ -5,10 +5,12 @@ description: I'm a Freelance Software Engineer with 10+ years' experience buildi
 ---
 
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Button from "../components/ui/Button.astro";
 import avatar from "../assets/images/avatar.png";
 import WorkExperiences from "../components/WorkExperiences.astro";
 import ArticlesList from "../components/ArticlesList.astro";
@@ -27,32 +29,34 @@ import SideProjectsCards from "../components/SideProjectsCards.astro";
 <>
   {
     <p class="relative text-xl font-medium !leading-normal text-gray-500 sm:text-2xl">
-      This is my little home on the web where I talk about work and write bits and bobs on software development.
+      Senior Software Engineer with 10+ years of experience building
+      full-stack web applications on <abbr title="Amazon Web Services">AWS</abbr> and <abbr title="Google Cloud Platform">GCP</abbr>.
     </p>
   }
 </>
 
-## About me
+I love working with startups and scale-ups on interesting product and
+engineering challenges. My specialty is **full-stack web development**, with
+senior level experience using **Go**, **TypeScript** (Node.js), **React** and
+**Svelte**. I deliver pragmatic _and_ high quality solutions on a deadline.
 
-Ever since I can remember I've had a keen interest in tinkering with computers and building things with them. I've
-been lucky enough to make a living doing just that for well over a decade. Aside from crafting software, I really
-enjoy playing piano and guitar. I live in Amsterdam with my girlfriend and son.
+Curious how I can add value to your team as a **Freelance Software Engineer**?
 
-## Work
-
-I'm a **Freelance Software Engineer** with 10+ years' experience building and maintaining
-web applications and services on cloud infrastructure.
-
-I love working with teams on interesting product and engineering challenges,
-approaching them with a pragmatic mindset. My area of expertise is backend web
-development using **Go** and **TypeScript** (Node.js), but I also know my way
-around **React** and **Svelte** on the frontend.
-
-<div class="rounded-lg border border-blue-200 bg-blue-50 px-6 font-medium shadow-sm">
-  Are you looking for an experienced software engineer? [Get in touch →](/contact)
+<div class="flex flex-wrap gap-3 mt-4">
+  <Button href="https://cal.com/dstotijn/15min" target="_blank" class="!bg-blue-600 hover:!bg-blue-500">
+    <Icon name="mdi:calendar" class="w-4 h-4 mr-2" />
+    Book a call
+  </Button>
+  <Button href="https://www.linkedin.com/in/dstotijn/" target="_blank">
+    <Icon name="mdi:linkedin" class="w-4 h-4 mr-2" />
+    View my LinkedIn profile
+  </Button>
 </div>
 
-Below is a list of selected work experience. For full details, [read my CV](/cv_david_stotijn.pdf) (PDF).
+
+## Highlighted Experience
+
+Below is a list of selected work experience. For more details, [read my CV](/cv_david_stotijn.pdf) (PDF).
 
 <WorkExperiences />
 

@@ -6,7 +6,7 @@ logo: ../../assets/images/work-experiences/messagebird.svg
 order: 3
 ---
 
-As a Tech Lead, I designed and built the (Go) backend of [Flow Builder](https://messagebird.com/applications/flow-builder), a no-code
-service used +1M/month by B2C customers for automating chat, email and voice workflows.
-
-Built developer-friendly RESTful APIs and backend services (Go, PHP) for SMS, Chat and Voice products.
+I designed and built the (Go) backend of [Flow
+Builder](https://bird.com/en-nl/automate/workflows): a no-code product
+used +1M/month by B2C customers for automating chat, email and voice workflows.
+Keywords: **Go, Cloud Spanner, Docker, Kubernetes, RESTful APIs**.
